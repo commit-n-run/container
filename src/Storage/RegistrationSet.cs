@@ -54,7 +54,7 @@ namespace Unity.Storage
             for (int i = _buckets[bucket]; --i >= 0; i = _entries[i].Next)
             {
                 ref var entry = ref _entries[i];
-                if (entry.HashCode == hashCode && entry.RegisteredType == type)
+                if (entry.HashCode == hashCode && entry.RegisteredType == type && entry.Name == name)
                 {
                     entry.RegisteredType = type;
                     entry.Name = name;
